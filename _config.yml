@@ -23,7 +23,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "/images/myself.png"
+  avatar           : "myself.png"
   name             : "Zimo Wang"
   pronouns         : # example: "she/her"  
   bio              : "Huazhong University of Science and technology"
