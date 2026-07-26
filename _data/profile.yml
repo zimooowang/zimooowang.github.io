@@ -40,4 +40,10 @@ education:
   position: B.S. in Artificial Intelligence (Qiming Class)
   date: Sep. 2023 - Present
 
-awards: []
+awards:
+- name: Award Name 2
+  date: 2024
+- name: Award Name 1
+  date: 2021
+- name: A quick brown fox jumps over the lazy dog and runs away award
+  date: 2021
