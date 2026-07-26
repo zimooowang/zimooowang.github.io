@@ -1,10 +1,10 @@
-primary_name: "王梓墨"
+primary_name: "Zimo Wang"
 secondary_name: ""
-navbar_name: "王梓墨"
+navbar_name: "Zimo Wang"
 
 positions:
-- name: 本科生
-- name: HUST
+- name: Undergraduate Student
+- name: Huazhong University of Science and Technology (HUST)
 
 
 email: "zimowang@hust.edu.cn"
