@@ -35,16 +35,10 @@ portrait_url: /assets/images/photos/wang-zimo.png
 portrait_caption: ""
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
-  logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
+- name: Huazhong University of Science and Technology (HUST)
+  logo: /assets/images/badges/hust.png
+  position: B.S. in Artificial Intelligence (Qiming Class)
+  date: Sep. 2023 - Present
 
 # experience:
 # - name: Peking University
