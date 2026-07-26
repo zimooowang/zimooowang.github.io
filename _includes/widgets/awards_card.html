@@ -1,0 +1,11 @@
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl">
+    <h6 class="border-bottom border-gray p-3 mb-0"><i class="fas fa-award"></i> Honors &amp; Awards</h6>
+    <ul class="list-group list-group-flush small">
+        {% for item in site.data.profile.awards %}
+        <li class="list-group-item px-3 d-flex">
+            <span>{{ item.name }}</span>
+            <em class="ml-auto mt-auto no-break">{{ item.date }}</em>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
