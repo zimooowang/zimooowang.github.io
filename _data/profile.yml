@@ -5,12 +5,13 @@ navbar_name: "Zimo Wang"
 positions:
 - name: Undergraduate Student
 - name: Huazhong University of Science and Technology (HUST)
+- name: Wuhan, China
 
 
 email: "zimowang@hust.edu.cn"
 # cv_link: link-to-your-cv-file
 gscholar: ""
-github: ""
+github: zimooowang
 twitter: ""
 # wechat_qrcode: /assets/images/etc/wechat.jpg
 # wechat_prompt: >-
@@ -24,10 +25,10 @@ short_bio: >-
     Welcome to my personal page! I am Zimo Wang (王梓墨 in Chinese), a third-year (2023.09-) undergraduate student in Artificial Intelligence at Huazhong University of Science and Technology (HUST).
   </p>
   <p>
-    I was fortunate to be a research intern at AutoLab@sjtu, advised by <a href="https://zhipengzhang.cn/" target="_blank" rel="noopener">Prof. Zhipeng Zhang</a>. I am going to join HustVL at Huazhong University of Science and Technology, supervised by <a href="https://xwcv.github.io/index_cn.htm" target="_blank" rel="noopener">Xinggang Wang</a>.
+    I was fortunate to be a research intern at AutoLab@sjtu, advised by <a href="https://zhipengzhang.cn/" target="_blank" rel="noopener">Prof. Zhipeng Zhang</a>. I am going to join <a href="https://github.com/hustvl" target="_blank" rel="noopener">HustVL</a> at Huazhong University of Science and Technology, supervised by <a href="https://xwcv.github.io/index_cn.htm" target="_blank" rel="noopener">Prof. Xinggang Wang</a>.
   </p>
   <p>
-    My current research interest is coding agent and embodied ai.
+    My current research interest is <strong>coding agent</strong> and <strong>embodied ai</strong>.
   </p>
 
 portrait_url: /assets/images/photos/wang-zimo.png
