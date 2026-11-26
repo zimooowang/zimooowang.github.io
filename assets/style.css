@@ -176,11 +176,6 @@ h1, h2, h3 { margin: 0; color: var(--text); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .hero-bg img { filter: sepia(.4); mix-blend-mode: screen; opacity: .16; }
 }
-@media (max-width: 860px) {
-  .hero-bg { width: 560px; height: 560px; left: 50%; top: 34%; margin: -280px 0 0 -280px; }
-  .hero-bg img { opacity: .12; }
-  [data-theme="dark"] .hero-bg img { opacity: .12; }
-}
 
 /* Latest highlight card, pinned to the bottom of the hero text */
 .latest {
@@ -430,12 +425,6 @@ sup.mark { font-size: .72em; margin-left: 1px; line-height: 0; }
 @media (max-width: 860px) {
   :root { --gutter: 24px; }
   .nav { display: none; }
-  .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; padding-bottom: 56px; }
-  .interests { margin-bottom: 28px; }
-  .profile-card { display: grid; grid-template-columns: 120px 1fr; column-gap: 18px; padding: 14px; }
-  .avatar { grid-row: span 2; }
-  .card-caption { margin: 2px 0 6px; }
-  .rows.links li { padding: 8px 0; }
   .section, .footer-main { grid-template-columns: 1fr; gap: 18px; }
   .section { padding-bottom: 56px; }
   .section > h2 { font-size: 1.7rem; }
@@ -444,12 +433,7 @@ sup.mark { font-size: .72em; margin-left: 1px; line-height: 0; }
 }
 
 @media (max-width: 520px) {
-  .profile-card { grid-template-columns: 1fr; }
-  .latest { flex-wrap: wrap; gap: 4px 12px; padding: 14px 16px; }
-  .latest-meta { width: 100%; }
-  .avatar { grid-row: auto; max-width: 160px; }
-  .card-caption { margin: 12px 0 8px; }
-  .rows li > span:first-child { display: none; }
+  .pub-rows li > span:first-child { display: none; }
   .news li { grid-template-columns: 1fr; gap: 2px; }
   .pub { grid-template-columns: 1fr; row-gap: 16px; padding: 16px 16px 6px; }
   .pub-rows { margin-top: 4px; }
@@ -457,6 +441,77 @@ sup.mark { font-size: .72em; margin-left: 1px; line-height: 0; }
   .tl-logo { width: 40px; height: 40px; grid-row: span 2; }
   .tl-when { grid-column: 2; text-align: left; font-size: .8rem; }
   .footer-foot { flex-direction: column; gap: 4px; }
+}
+
+/* ============================================================
+   Mobile hero — its own compact layout, not the desktop one shrunk.
+   The text column and profile card dissolve (display: contents)
+   so their pieces can be re-ordered into one grid:
+     [avatar] Name / 王梓墨
+     affiliation lines
+     interests
+     contact pills
+     latest card
+   ============================================================ */
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 88px minmax(0, 1fr);
+    grid-template-areas:
+      "avatar name"
+      "avatar zh"
+      "stmt   stmt"
+      "tags   tags"
+      "links  links"
+      "latest latest";
+    column-gap: 18px; row-gap: 0;
+    align-items: start;
+    padding-top: 32px; padding-bottom: 48px;
+  }
+  .hero-text, .profile-card { display: contents; }
+  .hero-text > *, .profile-card > * { position: relative; z-index: 1; }
+
+  .avatar { grid-area: avatar; width: 88px; height: 88px; border-radius: 16px; align-self: center; }
+  .name { grid-area: name; align-self: end; font-size: 2.3rem; letter-spacing: -0.03em; }
+  .name-zh { grid-area: zh; align-self: start; margin-top: 8px; font-size: 1rem; }
+  .card-caption { display: none; }
+
+  .statement {
+    grid-area: stmt; margin-top: 26px;
+    font-size: 1.04rem; line-height: 1.5; color: var(--text-muted);
+  }
+  .interests { grid-area: tags; margin: 18px 0 0; gap: 6px; }
+  .interests .label { width: 100%; margin: 0 0 2px; }
+
+  /* Contact: a row of pills instead of the card's table */
+  .rows.links { grid-area: links; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .rows.links li { padding: 0; border: 0; }
+  .rows.links li > span:first-child { display: none; }
+  .rows.links li:has(.is-placeholder) { display: none; }   /* hide "coming soon" until it has a link */
+  .links a {
+    padding: 8px 14px; border-radius: 999px;
+    background: var(--card); font-size: .84rem;
+  }
+  .links a[data-short] .v { display: none; }          /* short labels fit on one line */
+  .links a[data-short]::after { content: attr(data-short); }
+
+  .latest {
+    grid-area: latest; margin-top: 18px;
+    flex-wrap: wrap; gap: 4px 12px; padding: 14px 16px; max-width: none;
+  }
+  .latest-meta { width: 100%; }
+  .latest-text { font-size: .92rem; }
+
+  /* Background: a smaller, fainter glow behind the name block */
+  .hero-bg { width: 520px; height: 520px; left: 62%; top: 60px; margin: -260px 0 0 -260px; }
+  .hero-bg img { opacity: .13; }
+  [data-theme="dark"] .hero-bg img { opacity: .12; }
+}
+@media (max-width: 860px) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero-bg img { opacity: .12; }
+}
+@media (max-width: 860px) and (prefers-reduced-motion: no-preference) {
+  .js .avatar, .js .links { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .links { animation-delay: .3s; }
 }
 
 /* ============================================================
