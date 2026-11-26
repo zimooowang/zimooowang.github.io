@@ -258,20 +258,21 @@ main .section::before {
 /* Publications */
 .note { font-size: .82rem; color: var(--text-faint); margin: 6px 0 18px; }
 .pub {
-  display: grid; grid-template-columns: minmax(0, 1fr); gap: 0;
-  border-radius: var(--radius); overflow: hidden;
+  display: grid; grid-template-columns: 260px minmax(0, 1fr);
+  column-gap: 28px; align-items: center;
+  padding: 22px 24px 10px; border-radius: var(--radius);
   background: var(--card);
 }
 .pub + .pub { margin-top: 16px; }
 .pub-thumb {
-  display: flex; align-items: center; justify-content: center;
-  padding: 28px 40px; overflow: hidden;
+  display: block; overflow: hidden;
+  padding: 10px; border-radius: 10px;
   background: #fff;   /* figures are drawn for white paper — keep it white in dark mode too */
 }
-.pub-thumb img { width: 100%; max-width: 600px; height: auto; display: block; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.pub-thumb img { width: 100%; height: auto; display: block; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
 .pub:hover .pub-thumb img { transform: scale(1.02); }
 
-.pub-body { min-width: 0; padding: 22px 28px 12px; }   /* lets long BibTeX lines scroll instead of widening the column */
+.pub-body { min-width: 0; }   /* lets long BibTeX lines scroll instead of widening the column */
 .pub p { margin: 0; font-size: .9rem; }
 .pub-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px !important; }
 .badge {
@@ -288,7 +289,8 @@ main .section::before {
 sup.mark { font-size: .72em; margin-left: 1px; line-height: 0; }
 .venue { color: var(--text-faint); margin-top: 2px !important; }
 
-.pub-rows { margin-top: 16px; }
+.pub-rows, .pub .bib { grid-column: 1 / -1; }
+.pub-rows { margin-top: 20px; }
 .pub-rows li { padding: 9px 0; font-size: .84rem; }
 .row-links { display: flex; gap: 18px; }
 .row-links a, .bib-toggle {
@@ -301,7 +303,7 @@ sup.mark { font-size: .72em; margin-left: 1px; line-height: 0; }
 .bib-toggle i { transition: transform .25s ease; }
 .bib-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
 
-.bib { position: relative; margin-top: 8px; }
+.bib { position: relative; margin: 4px 0 12px; }
 .bib pre {
   margin: 0; padding: 14px 16px; overflow-x: auto;
   font: .74rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -374,6 +376,7 @@ sup.mark { font-size: .72em; margin-left: 1px; line-height: 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
+  .pub { grid-template-columns: 200px minmax(0, 1fr); column-gap: 22px; }
   .section, .footer-main { grid-template-columns: 200px minmax(0, 1fr); }
   .hero { grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; }
 }
@@ -399,8 +402,8 @@ sup.mark { font-size: .72em; margin-left: 1px; line-height: 0; }
   .card-caption { margin: 12px 0 8px; }
   .rows li > span:first-child { display: none; }
   .news li { grid-template-columns: 1fr; gap: 2px; }
-  .pub-thumb { padding: 14px; }
-  .pub-body { padding: 18px 16px 8px; }
+  .pub { grid-template-columns: 1fr; row-gap: 16px; padding: 16px 16px 6px; }
+  .pub-rows { margin-top: 4px; }
   .timeline li { grid-template-columns: 40px 1fr; gap: 2px 14px; }
   .tl-logo { width: 40px; height: 40px; grid-row: span 2; }
   .tl-when { grid-column: 2; text-align: left; font-size: .8rem; }

@@ -120,19 +120,19 @@
           <h3><a class="pub-title" href="https://arxiv.org/abs/2611.33757">TransHarness: From Benchmark Overfitting to Transferable Harness Evolution</a></h3>
           <p class="authors">Tianze Xia<sup class="mark">*</sup>, <span class="me">Zimo Wang</span><sup class="mark">*</sup>, Heng Tong<sup class="mark">*</sup>, Zhaoxiang Liu, Shiguo Lian, Fan Huang, Wenyu Liu, Yunchao Wei, Xinggang Wang<sup class="mark">✉&#xFE0E;</sup></p>
           <p class="venue"><em>arXiv preprint arXiv:2611.33757</em>, 2026</p>
-          <ul class="rows pub-rows">
-            <li><span>Paper</span><span class="row-links"><a href="https://arxiv.org/abs/2611.33757">arXiv <i>→</i></a><a href="https://arxiv.org/pdf/2611.33757">PDF <i>→</i></a></span></li>
-            <li><span>Citation</span><span class="row-links"><button type="button" class="bib-toggle" aria-expanded="false">BibTeX <i>↓</i></button></span></li>
-          </ul>
-          <div class="bib" hidden>
-            <pre>@article{xia2026transharness,
+        </div>
+        <ul class="rows pub-rows">
+          <li><span>Paper</span><span class="row-links"><a href="https://arxiv.org/abs/2611.33757">arXiv <i>→</i></a><a href="https://arxiv.org/pdf/2611.33757">PDF <i>→</i></a></span></li>
+          <li><span>Citation</span><span class="row-links"><button type="button" class="bib-toggle" aria-expanded="false">BibTeX <i>↓</i></button></span></li>
+        </ul>
+        <div class="bib" hidden>
+          <pre>@article{xia2026transharness,
   title   = {TransHarness: From Benchmark Overfitting to Transferable Harness Evolution},
   author  = {Xia, Tianze and Wang, Zimo and Tong, Heng and Liu, Zhaoxiang and Lian, Shiguo and Huang, Fan and Liu, Wenyu and Wei, Yunchao and Wang, Xinggang},
   journal = {arXiv preprint arXiv:2611.33757},
   year    = {2026}
 }</pre>
-            <button type="button" class="bib-copy">Copy</button>
-          </div>
+          <button type="button" class="bib-copy">Copy</button>
         </div>
       </article>
     </div>
@@ -221,7 +221,7 @@
 
   // BibTeX: show / hide, and copy to clipboard
   document.querySelectorAll('.bib-toggle').forEach(function (btn) {
-    var box = btn.closest('.pub-body').querySelector('.bib');
+    var box = btn.closest('.pub').querySelector('.bib');
     btn.addEventListener('click', function () {
       box.hidden = !box.hidden;
       btn.setAttribute('aria-expanded', String(!box.hidden));
